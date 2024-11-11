@@ -510,6 +510,15 @@ header {
   font-size: 16px;
   color: #333;
   text-align: center;
+  background-color: #fff; /* Ensure background is visible */
+  outline: none;
+  -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+  -moz-appearance: none;    /* Remove default styling in Mozilla browsers */
+  appearance: none;         /* Remove default styling in modern browsers */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0); /* Ensures the calendar icon is visible */
 }
 
 .swap-icon-small {
