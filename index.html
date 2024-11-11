@@ -4,66 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Website | Home</title>
+    <title>Website | HOME</title>
 </head>
 <body>
     <header class="navimg">
-      <div class="navbar">
-        <div class="logo">Your Logo</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+        <div class="navbar">
+            <div class="logo">
+                <img src="Pictures/.webp" alt="Logo">
+            </div>
+            <div class="navbar-big">
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="flights.html">FLIGHTS</a>
+                    <a href="hotels.html">HOTELS</a>
+                    <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="make-a-payment.html">MAKE A PAYMENT</a>
+                </div>
+            </div>
+            <div class="navbar-small">
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <a href="index.html">HOME</a>
+                        <a href="flights.html">FLIGHTS</a>
+                        <a href="hotels.html">HOTELS</a>
+                        <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
+                        <a href="contact-us.html">CONTACT US</a>
+                        <a href="make-a-payment.html">MAKE A PAYMENT</a>
+                    </div>
+                </div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
         </div>
-        <div class="menu-btn" onclick="toggleDropdown()">☰</div>
-        <div class="dropdown" id="dropdown-menu">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-      </div>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="travel-search-engine-big">
+            <center><h1>Looking to book cheap flights or explore our holiday packages?</h1></center>
+            <div class="features-big">
+                <span><h2>&#x2713; Best Flight Deals</h2></span>
+                <span><h2>&#x2713; Exclusive Holiday Packages</h2></span>
+                <span><h2>&#x2713; ATOL/ABTA Bonded</h2></span>
+            </div>
+            <br><br><br><br>
+            <div class="search-container-big">
+                <div class="trip-type-big">
+                    <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
+                    <label><input type="radio" name="tripType" value="oneway"> One Way</label>
+                    <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
+                </div>    
+                <div class="input-row-big">
+                    <input type="text" class="input-field-big" id="from-big" placeholder="From">
+                    <span class="swap-icon-big">⇄</span>
+                    <input type="text" class="input-field-big" id="to-big" placeholder="To">
+                    <input type="date" class="input-field-big" id="depart-big">
+                    <input type="date" class="input-field-big" id="return-big">            
+                    <div class="travelers-container-big">              
+                        <button id="travelersButton-big" class="travelers-button-big" onclick="toggleModal()">1 Traveler, Economy</button>          
+                        <div class="travelers-modal-big" id="travelersModal-big">
+                            <div class="passenger-section-big">
+                                <div class="passenger-type-big">
+                                    <label>Adults</label>
+                                    <div class="counter-big">
+                                        <button onclick="decrement('adults-big')">-</button>
+                                        <input type="text" id="adults-big" value="1" readonly />
+                                        <button onclick="increment('adults-big')">+</button>
+                                    </div>
+                                </div>
+                                <div class="passenger-type-big">
+                                    <label>Child <small>(2-11 YRS)</small></label>
+                                    <div class="counter-big">
+                                        <button onclick="decrement('children-big')">-</button>
+                                        <input type="text" id="children-big" value="0" readonly />
+                                        <button onclick="increment('children-big')">+</button>
+                                    </div>
+                                </div>
+                                <div class="passenger-type-big">
+                                    <label>Infant <small>(Below 2 YRS)</small></label>
+                                    <div class="counter-big">
+                                        <button onclick="decrement('infants-big')">-</button>
+                                        <input type="text" id="infants-big" value="0" readonly />
+                                        <button onclick="increment('infants-big')">+</button>
+                                    </div>
+                                </div>
+                            </div>          
+                            <div class="class-selection-big">
+                                <label>
+                                    <input type="radio" name="class" value="Economy" checked onchange="updateTravelerInfo()"> Economy
+                                </label>
+                                <label>
+                                    <input type="radio" name="class" value="Premium Economy" onchange="updateTravelerInfo()"> Premium Economy
+                                </label>
+                                <label>
+                                    <input type="radio" name="class" value="Business" onchange="updateTravelerInfo()"> Business
+                                </label>
+                            </div>
+                            <button class="done-button-big" onclick="closeModal()">Done</button>
+                        </div>                  
+                    </div>    
+                    <button class="search-button-big" onclick="searchFlights()">Submit</button>
+                </div>
+            </div>  
+        </div>          
     </header>
+    <div class="travel-search-engine-small">
+        <br>
+        <center><h1>Looking to book cheap flights or explore our holiday packages?</h1></center>
+        <div class="features-small">
+            <span><h2>&#x2713; Best Flight Deals</h2></span>
+            <span><h2>&#x2713; Exclusive Holiday Packages</h2></span>
+            <span><h2>&#x2713; ATOL/ABTA Bonded</h2></span>
+        </div>
+        <div class="search-container-small">
+            <div class="trip-type-small">
+                <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
+                <label><input type="radio" name="tripType" value="oneway"> One Way</label>
+                <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
+            </div>    
+            <div class="input-row-small">
+                <input type="text" class="input-field-small" id="from-small" placeholder="From">
+                <span class="swap-icon-small">⇄</span>
+                <input type="text" class="input-field-small" id="to-small" placeholder="To">
+                <input type="date" class="input-field-small" id="depart-small">
+                <input type="date" class="input-field-small" id="return-small">            
+                <div class="travelers-container-small">              
+                    <button id="travelersButton-small" class="travelers-button-small" onclick="toggleModal()">1 Traveler, Economy</button>          
+                    <div class="travelers-modal-small" id="travelersModal-small">
+                        <div class="passenger-section-small">
+                            <div class="passenger-type-small">
+                                <label>Adults</label>
+                                <div class="counter-small">
+                                    <button onclick="decrement('adults-small')">-</button>
+                                    <input type="text" id="adults-small" value="1" readonly />
+                                    <button onclick="increment('adults-small')">+</button>
+                                </div>
+                            </div>
+                            <div class="passenger-type-small">
+                                <label>Child <small>(2-11 YRS)</small></label>
+                                <div class="counter-small">
+                                    <button onclick="decrement('children-small')">-</button>
+                                    <input type="text" id="children-small" value="0" readonly />
+                                    <button onclick="increment('children-small')">+</button>
+                                </div>
+                            </div>
+                            <div class="passenger-type-small">
+                                <label>Infant <small>(Below 2 YRS)</small></label>
+                                <div class="counter-small">
+                                    <button onclick="decrement('infants-small')">-</button>
+                                    <input type="text" id="infants-small" value="0" readonly />
+                                    <button onclick="increment('infants-small')">+</button>
+                                </div>
+                            </div>
+                        </div>          
+                        <div class="class-selection-small">
+                            <label>
+                                <input type="radio" name="class" value="Economy" checked onchange="updateTravelerInfo()"> Economy
+                            </label>
+                            <label>
+                                <input type="radio" name="class" value="Premium Economy" onchange="updateTravelerInfo()"> Premium Economy
+                            </label>
+                            <label>
+                                <input type="radio" name="class" value="Business" onchange="updateTravelerInfo()"> Business
+                            </label>
+                        </div>
+                        <button class="done-button-small" onclick="closeModal()">Done</button>
+                    </div>                  
+                </div>    
+                <button class="search-button-small" onclick="searchFlights()">Submit</button>
+            </div>
+        </div>
+        <br><br>
+    </div>
     <br>
     <script src="script.js"></script>
 </body>
 <footer class="footer">
-  <div class="footer-section">
-    <h3>Need Our Assistance?</h3>
-    <p><i class="fa fa-phone"></i> Call Us: 0207 290 5570</p>
-    <p>
-      <br>
-      <b>Address  :</b><br>
-      15A Cobalt Business Park, 1 Quick Silver Way,<br>
-      Newcastle upon Tyne, United Kingdom NE27 0QQ.<br>
-      0207 290 5571
-    </p>
-    <div class="social-icons">
-      <a href="#"><img src="Pictures/Facebook.webp" alt="Facebook"></a>
-      <a href="#"><img src="Pictures/Instagram.webp" alt="Instagram"></a>
-      <a href="#"><img src="Pictures/Twitter.webp" alt="Twitter"></a>
-      <a href="#"><img src="Pictures/Linkedin.webp" alt="Linkedin"></a>
+    <div class="footer-section">
+        <h3>Need Our Assistance?</h3>
+        <p><i class="fa fa-phone"></i> Call Us: 0207 290 5570</p>
+        <p>
+            <br>
+            <b>Address:</b><br>
+            15A Cobalt Business Park, 1 Quick Silver Way,<br>
+            Newcastle upon Tyne, United Kingdom NE27 0QQ.<br>
+            0207 290 5571
+        </p>
+        <div class="social-icons">
+            <a href="#"><img src="Pictures/Facebook.webp" alt="Facebook"></a>
+            <a href="#"><img src="Pictures/Instagram.webp" alt="Instagram"></a>
+            <a href="#"><img src="Pictures/Twitter.webp" alt="Twitter"></a>
+            <a href="#"><img src="Pictures/Linkedin.webp" alt="Linkedin"></a>
+        </div>
     </div>
-  </div>
-  <div class="footer-section">
-    <h3>Useful Links</h3>
-    <ul>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Modern Slavery Statement</a></li>
-      <li><a href="#">Privacy & Cookie Policy</a></li>
-      <li><a href="#">Essential Travel Information</a></li>
-      <li><a href="#">Terms & Conditions</a></li>
-      <li><a href="#">FAQ</a></li>
-    </ul>
-  </div>
-  <div class="footer-section">
-    <h3>Mailing List</h3>
-    <p>Sign up for our mailing list to get latest updates and offers.</p>
-    <form class="subscribe-form">
-      <input type="email" placeholder="Your Email">
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
+    <div class="footer-section">
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Modern Slavery Statement</a></li>
+            <li><a href="#">Privacy & Cookie Policy</a></li>
+            <li><a href="#">Essential Travel Information</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h3>Mailing List</h3>
+        <p>Sign up for our mailing list to get latest updates and offers.</p>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Your Email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
 </footer>
 </html>
