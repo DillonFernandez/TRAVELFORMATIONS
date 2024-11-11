@@ -14,7 +14,7 @@
             </div>
             <div class="navbar-big">
                 <div class="nav-links">
-                    <a href="index.html">HOME</a>
+                    <a href="index.html" class="currenttab">HOME</a>
                     <a href="flights.html">FLIGHTS</a>
                     <a href="hotels.html">HOTELS</a>
                     <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
@@ -25,7 +25,7 @@
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content">
-                        <a href="index.html">HOME</a>
+                        <a href="index.html" class="currenttab">HOME</a>
                         <a href="flights.html">FLIGHTS</a>
                         <a href="hotels.html">HOTELS</a>
                         <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
@@ -35,14 +35,17 @@
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br>
         <div class="travel-search-engine-big">
-            <center><h1>Looking to book cheap flights or explore our holiday packages?</h1></center>
-            <div class="features-big">
-                <span><h2>&#x2713; Best Flight Deals</h2></span>
-                <span><h2>&#x2713; Exclusive Holiday Packages</h2></span>
-                <span><h2>&#x2713; ATOL/ABTA Bonded</h2></span>
-            </div>
+            <div class="travel-content">
+                <h1>TRAVELFORMATIONS</h1>
+                <h2>"travel endlessly"</h2>
+                <br>
+                <h2>
+                    Escape to paradise with us. Book a flight. Unwind and relax in breath-taking destinations<br>
+                    handpicked by our travel experts - online travel agency
+                </h2>
+            </div> 
             <br><br><br><br>
             <div class="search-container-big">
                 <div class="trip-type-big">
@@ -106,21 +109,21 @@
     </header>
     <div class="travel-search-engine-small">
         <div class="content-grid-small">
-            <div class="features-small">
-                <h1>Looking to book cheap flights or explore our holiday packages?</h1>
-                <ul>
-                    <li><h2>&#x2713; Best Flight Deals</h2></li>
-                    <li><h2>&#x2713; Exclusive Holiday Packages</h2></li>
-                    <li><h2>&#x2713; ATOL/ABTA Bonded</h2></li>
-                </ul>
-            </div>            
+            <div class="travel-content">
+                <h1>TRAVELFORMATIONS</h1>
+                <h2>"travel endlessly"</h2>
+                <br>
+                <h2>
+                    Escape to paradise with us. Book a flight. Unwind and relax in breath-taking destinations<br>
+                    handpicked by our travel experts - online travel agency
+                </h2>
+            </div>                       
             <div class="search-container-small">
                 <div class="trip-type-small">
                     <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
                     <label><input type="radio" name="tripType" value="oneway"> One Way</label>
                     <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
-                </div>
-                
+                </div>                
                 <div class="input-row-small">
                     <input type="text" class="input-field-small" id="from-small" placeholder="From">
                     <input type="text" class="input-field-small" id="to-small" placeholder="To">
@@ -168,12 +171,12 @@
                             </label>
                         </div>
                         <button class="done-button-small" onclick="closeModal()">Done</button>
-                    </div>
+                    </div>      
                 </div>                
                 <center><button class="search-button-small" onclick="searchFlights()">Search</button></center>
             </div>
         </div>
-        <br>
+        <br><br><br>
     </div>    
     <br>
     <script src="script.js"></script>
@@ -181,35 +184,38 @@
 <footer class="footer">
     <div class="footer-section">
         <h3>Need Our Assistance?</h3>
-        <p><i class="fa fa-phone"></i> Call Us: 0207 290 5570</p>
+        <p>
+            <i class="fa fa-phone"></i> 
+            Phone :0208 138 2036<br>
+            Email : sales@travelformations.uk<br>
+            WhatsApp: +44 7418 610604
+        </p>
         <p>
             <br>
             <b>Address:</b><br>
-            15A Cobalt Business Park, 1 Quick Silver Way,<br>
-            Newcastle upon Tyne, United Kingdom NE27 0QQ.<br>
-            0207 290 5571
+            London, Greater London, England, United Kingdom
         </p>
         <div class="social-icons">
-            <a href="#"><img src="Pictures/Facebook.webp" alt="Facebook"></a>
-            <a href="#"><img src="Pictures/Instagram.webp" alt="Instagram"></a>
-            <a href="#"><img src="Pictures/Twitter.webp" alt="Twitter"></a>
-            <a href="#"><img src="Pictures/Linkedin.webp" alt="Linkedin"></a>
+            <a href="https://web.facebook.com/travel.formations/" target="_blank"><img src="Pictures/Facebook.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/__travelformations__/" target="_blank"><img src="Pictures/Instagram.webp" alt="Instagram"></a>
         </div>
     </div>
     <div class="footer-section">
         <h3>Useful Links</h3>
         <ul>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Modern Slavery Statement</a></li>
-            <li><a href="#">Privacy & Cookie Policy</a></li>
-            <li><a href="#">Essential Travel Information</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#">HOTELS</a></li>
+            <li><a href="#">PACKAGE HOLIDAYS</a></li>
+            <li><a href="#">PRIVACY POLICY</a></li>
+            <li><a href="#">TERMS AND CONDITIONS</a></li>
+            <li><a href="#">CONTACT US</a></li>
         </ul>
     </div>
     <div class="footer-section">
-        <h3>Mailing List</h3>
-        <p>Sign up for our mailing list to get latest updates and offers.</p>
+        <h3>Join Our Mailing List</h3>
+        <p>
+            Be the first to hear about upcoming trips, exciting destinations, and fun activities! 
+            Cheap travel deals online Great online air ticket booking site & flight booking offers all year around.
+        </p>
         <form class="subscribe-form">
             <input type="email" placeholder="Your Email">
             <button type="submit">Subscribe</button>

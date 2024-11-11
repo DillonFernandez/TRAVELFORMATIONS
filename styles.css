@@ -12,6 +12,10 @@ header {
   color: white;
 }
 
+.currenttab{
+  font-weight: bolder;
+}
+
 .navimg{
   background-image: url('Pictures/Test.jpeg');
   background-size: cover;
@@ -235,14 +239,49 @@ header {
 /* ----------------------------------------------------------------------------------------------------*/
 
 /* Home Page*/
-/*Travel search engine - Big*/
-.features-big {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
+.travel-content {
   text-align: center;
+  padding: 20px;
 }
 
+.travel-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.travel-content h2 {
+  font-size: 1.6rem; 
+  margin: 10px 0;
+}
+
+@media (max-width: 992px) {
+  .travel-content h1 {
+      font-size: 2.5rem;
+  }
+  .travel-content h2 {
+      font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .travel-content h1 {
+      font-size: 2rem;
+  }
+  .travel-content h2 {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .travel-content h1 {
+      font-size: 1.5rem;
+  }
+  .travel-content h2 {
+      font-size: 1rem;
+  }
+}
+
+/*Travel search engine - Big*/
 .search-container-big {
   max-width: 1000px;
   margin: auto;
@@ -414,6 +453,12 @@ header {
   transition: background-color 0.3s;
 }
 
+@media (max-width: 1050px) {
+  .travel-search-engine-big{
+    display: none;
+  }
+}
+
 /*Travel search engine small*/
 .travel-search-engine-small {
   color: white;
@@ -426,26 +471,6 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-}
-
-.features-small {
-  text-align: center;
-}
-
-.features-small h1 {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.features-small ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.features-small ul li {
-  font-size: 18px;
-  color: #ffcd3c;
-  margin-bottom: 10px;
 }
 
 .search-container-small {
@@ -496,7 +521,7 @@ header {
 
 .search-button-small {
   grid-column: span 2;
-  width: 25%;
+  width: 100%;
   padding: 14px;
   background: #4CAF50;
   color: #fff;
@@ -512,7 +537,6 @@ header {
   background: #45a049;
 }
 
-/* Align travelers container with content-grid */
 .travelers-container-small {
   position: relative;
   margin-top: 20px;
@@ -540,8 +564,9 @@ header {
   border-radius: 8px;
   display: none;
   flex-direction: column;
+  align-items: center;
   z-index: 10;
-  width: 95%;
+  width: 50%;
 }
 
 .travelers-modal-small.active {
@@ -550,18 +575,23 @@ header {
 
 .passenger-section-small {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 15px;
+  align-items: center;
+  width: 100%; 
 }
 
 .passenger-type-small {
   text-align: center;
+  width: 100%;
 }
 
 .counter-small {
   display: flex;
   align-items: center;
   gap: 5px;
+  justify-content: center;
 }
 
 .counter-small button {
@@ -587,8 +617,11 @@ header {
 
 .class-selection-small {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap; 
+  gap: 20px;
+  justify-content: center; 
   margin-top: 20px;
+  width: 100%;
 }
 
 .class-selection-small label {
@@ -609,6 +642,51 @@ header {
 }
 
 @media (max-width: 768px) {
+
+  .travelers-modal-small {
+      max-width: 60%
+  }
+
+  .counter-small button,
+  .counter-small input {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+  }
+
+  .done-button-small {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .travelers-button-small {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+
+  .travelers-modal-small {
+      padding: 15px;
+  }
+
+  .done-button-small {
+      font-size: 13px;
+      padding: 10px;
+  }
+
+  .counter-small button {
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+  }
+
+  .counter-small input {
+      width: 35px;
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
   .input-row-small {
     grid-template-columns: 1fr;
   }
@@ -618,14 +696,14 @@ header {
   }
 }
 
-@media (min-width: 1050px) {
-  .travel-search-engine-small{
-    display: none;
+@media (max-width: 396px) {
+  .trip-type-small label{
+    font-size: 13px;
   }
 }
 
-@media (max-width: 1050px) {
-  .travel-search-engine-big{
+@media (min-width: 1050px) {
+  .travel-search-engine-small{
     display: none;
   }
 }
