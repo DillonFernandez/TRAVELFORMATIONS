@@ -90,13 +90,13 @@ header {
   font-size: 60px;
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 901px) {
   .navbar-small{
     display: none;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   .navbar-big{
     display: none;
   }
