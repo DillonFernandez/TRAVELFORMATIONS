@@ -19,7 +19,6 @@
                     <a href="hotels.html">HOTELS</a>
                     <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
                     <a href="contact-us.html">CONTACT US</a>
-                    <a href="make-a-payment.html">MAKE A PAYMENT</a>
                 </div>
             </div>
             <div class="navbar-small">
@@ -31,7 +30,6 @@
                         <a href="hotels.html">HOTELS</a>
                         <a href="holiday-packages.html">HOLIDAY PACKAGES</a>
                         <a href="contact-us.html">CONTACT US</a>
-                        <a href="make-a-payment.html">MAKE A PAYMENT</a>
                     </div>
                 </div>
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -101,33 +99,36 @@
                             <button class="done-button-big" onclick="closeModal()">Done</button>
                         </div>                  
                     </div>    
-                    <button class="search-button-big" onclick="searchFlights()">Submit</button>
+                    <button class="search-button-big" onclick="searchFlights()">Search</button>
                 </div>
             </div>  
         </div>          
     </header>
     <div class="travel-search-engine-small">
-        <br>
-        <center><h1>Looking to book cheap flights or explore our holiday packages?</h1></center>
-        <div class="features-small">
-            <span><h2>&#x2713; Best Flight Deals</h2></span>
-            <span><h2>&#x2713; Exclusive Holiday Packages</h2></span>
-            <span><h2>&#x2713; ATOL/ABTA Bonded</h2></span>
-        </div>
-        <div class="search-container-small">
-            <div class="trip-type-small">
-                <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
-                <label><input type="radio" name="tripType" value="oneway"> One Way</label>
-                <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
-            </div>    
-            <div class="input-row-small">
-                <input type="text" class="input-field-small" id="from-small" placeholder="From">
-                <span class="swap-icon-small">⇄</span>
-                <input type="text" class="input-field-small" id="to-small" placeholder="To">
-                <input type="date" class="input-field-small" id="depart-small">
-                <input type="date" class="input-field-small" id="return-small">            
-                <div class="travelers-container-small">              
-                    <button id="travelersButton-small" class="travelers-button-small" onclick="toggleModal()">1 Traveler, Economy</button>          
+        <div class="content-grid-small">
+            <div class="features-small">
+                <h1>Looking to book cheap flights or explore our holiday packages?</h1>
+                <ul>
+                    <li><h2>&#x2713; Best Flight Deals</h2></li>
+                    <li><h2>&#x2713; Exclusive Holiday Packages</h2></li>
+                    <li><h2>&#x2713; ATOL/ABTA Bonded</h2></li>
+                </ul>
+            </div>            
+            <div class="search-container-small">
+                <div class="trip-type-small">
+                    <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
+                    <label><input type="radio" name="tripType" value="oneway"> One Way</label>
+                    <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
+                </div>
+                
+                <div class="input-row-small">
+                    <input type="text" class="input-field-small" id="from-small" placeholder="From">
+                    <input type="text" class="input-field-small" id="to-small" placeholder="To">
+                    <input type="date" class="input-field-small" id="depart-small">
+                    <input type="date" class="input-field-small" id="return-small">
+                </div>
+                <div class="travelers-container-small">
+                    <button id="travelersButton-small" class="travelers-button-small" onclick="toggleModal()">1 Traveler, Economy</button>
                     <div class="travelers-modal-small" id="travelersModal-small">
                         <div class="passenger-section-small">
                             <div class="passenger-type-small">
@@ -154,7 +155,7 @@
                                     <button onclick="increment('infants-small')">+</button>
                                 </div>
                             </div>
-                        </div>          
+                        </div>
                         <div class="class-selection-small">
                             <label>
                                 <input type="radio" name="class" value="Economy" checked onchange="updateTravelerInfo()"> Economy
@@ -167,13 +168,13 @@
                             </label>
                         </div>
                         <button class="done-button-small" onclick="closeModal()">Done</button>
-                    </div>                  
-                </div>    
-                <button class="search-button-small" onclick="searchFlights()">Submit</button>
+                    </div>
+                </div>                
+                <center><button class="search-button-small" onclick="searchFlights()">Search</button></center>
             </div>
         </div>
-        <br><br>
-    </div>
+        <br>
+    </div>    
     <br>
     <script src="script.js"></script>
 </body>
