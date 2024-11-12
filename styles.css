@@ -937,9 +937,9 @@ header {
   }
 
   .search-button-flights {
-    width: 100%;
+    width: 93%;
   }
-
+  
   .travelers-container-flights {
     width: 93%;
   }
@@ -947,6 +947,12 @@ header {
   .travelers-button-flights {
     padding: 10px;
     font-size: 18px;
+  }
+  
+  .travelers-modal-flights {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+    width: 50%;
   }
 
   .passenger-section-flights {
@@ -959,9 +965,10 @@ header {
   }
 
   .counter-flights {
-    width: 100%;
-    justify-content: space-between;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
 
   .counter-flights button {
     width: 35px;
@@ -973,9 +980,11 @@ header {
   }
 
   .class-selection-flights {
-    flex-direction: column;
     gap: 15px;
-  }
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }  
 
   .done-button-flights {
     width: 100%;
@@ -1000,6 +1009,7 @@ header {
   .search-button-flights {
     padding: 12px 18px;
     font-size: 14px;
+    width: 93%;
   }
 
   .travelers-container-flights {
@@ -1016,8 +1026,10 @@ header {
   }
 
   .counter-flights {
-    justify-content: space-evenly;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
 
   .class-selection-flights {
     flex-direction: column;
@@ -1049,6 +1061,7 @@ header {
   .search-button-flights {
     padding: 10px 16px;
     font-size: 14px;
+    width: 95%;
   }  
 
   .travelers-container-flights {
@@ -1065,8 +1078,10 @@ header {
   }
 
   .counter-flights {
-    justify-content: space-evenly;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
 
   .done-button-flights {
     padding: 10px;
