@@ -49,55 +49,49 @@
             <br><br><br><br>
             <div class="search-container-big">
                 <div class="trip-type-big">
-                    <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
-                    <label><input type="radio" name="tripType" value="oneway"> One Way</label>
-                    <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
+                    <label><input type="radio" name="tripTypeBig" value="round" checked onchange="syncTripType('big')"> Round Trip</label>
+                    <label><input type="radio" name="tripTypeBig" value="oneway" onchange="syncTripType('big')"> One Way</label>
+                    <label><input type="radio" name="tripTypeBig" value="multicity" onchange="syncTripType('big')"> Multi City</label>
                 </div>    
                 <div class="input-row-big">
-                    <input type="text" class="input-field-big" id="from-big" placeholder="From">
+                    <input type="text" class="input-field-big" id="from-big" placeholder="From" oninput="syncInputs('from-big', 'from-small')">
                     <span class="swap-icon-big">⇄</span>
-                    <input type="text" class="input-field-big" id="to-big" placeholder="To">
-                    <input type="date" class="input-field-big" id="depart-big">
-                    <input type="date" class="input-field-big" id="return-big">            
+                    <input type="text" class="input-field-big" id="to-big" placeholder="To" oninput="syncInputs('to-big', 'to-small')">
+                    <input type="date" class="input-field-big" id="depart-big" onchange="syncInputs('depart-big', 'depart-small')">
+                    <input type="date" class="input-field-big" id="return-big" onchange="syncInputs('return-big', 'return-small')">            
                     <div class="travelers-container-big">              
-                        <button id="travelersButton-big" class="travelers-button-big" onclick="toggleModal()">1 Traveler, Economy</button>          
+                        <button id="travelersButton-big" class="travelers-button-big" onclick="toggleModal('big')">1 Traveler, Economy</button>          
                         <div class="travelers-modal-big" id="travelersModal-big">
                             <div class="passenger-section-big">
                                 <div class="passenger-type-big">
                                     <label>Adults</label>
                                     <div class="counter-big">
-                                        <button onclick="decrement('adults-big')">-</button>
+                                        <button onclick="decrement('adults-big', 'adults-small')">-</button>
                                         <input type="text" id="adults-big" value="1" readonly />
-                                        <button onclick="increment('adults-big')">+</button>
+                                        <button onclick="increment('adults-big', 'adults-small')">+</button>
                                     </div>
                                 </div>
                                 <div class="passenger-type-big">
                                     <label>Child <small>(2-11 YRS)</small></label>
                                     <div class="counter-big">
-                                        <button onclick="decrement('children-big')">-</button>
+                                        <button onclick="decrement('children-big', 'children-small')">-</button>
                                         <input type="text" id="children-big" value="0" readonly />
-                                        <button onclick="increment('children-big')">+</button>
+                                        <button onclick="increment('children-big', 'children-small')">+</button>
                                     </div>
                                 </div>
                                 <div class="passenger-type-big">
                                     <label>Infant <small>(Below 2 YRS)</small></label>
                                     <div class="counter-big">
-                                        <button onclick="decrement('infants-big')">-</button>
+                                        <button onclick="decrement('infants-big', 'infants-small')">-</button>
                                         <input type="text" id="infants-big" value="0" readonly />
-                                        <button onclick="increment('infants-big')">+</button>
+                                        <button onclick="increment('infants-big', 'infants-small')">+</button>
                                     </div>
                                 </div>
                             </div>          
                             <div class="class-selection-big">
-                                <label>
-                                    <input type="radio" name="class" value="Economy" checked onchange="updateTravelerInfo()"> Economy
-                                </label>
-                                <label>
-                                    <input type="radio" name="class" value="Premium Economy" onchange="updateTravelerInfo()"> Premium Economy
-                                </label>
-                                <label>
-                                    <input type="radio" name="class" value="Business" onchange="updateTravelerInfo()"> Business
-                                </label>
+                                <label><input type="radio" name="classBig" value="Economy" checked onchange="syncClass('big')"> Economy</label>
+                                <label><input type="radio" name="classBig" value="Premium Economy" onchange="syncClass('big')"> Premium Economy</label>
+                                <label><input type="radio" name="classBig" value="Business" onchange="syncClass('big')"> Business</label>
                             </div>
                             <button class="done-button-big" onclick="closeModal()">Done</button>
                         </div>                  
@@ -120,55 +114,49 @@
             </div>                       
             <div class="search-container-small">
                 <div class="trip-type-small">
-                    <label><input type="radio" name="tripType" value="round" checked> Round Trip</label>
-                    <label><input type="radio" name="tripType" value="oneway"> One Way</label>
-                    <label><input type="radio" name="tripType" value="multicity"> Multi City</label>
+                    <label><input type="radio" name="tripTypeSmall" value="round" checked onchange="syncTripType('small')"> Round Trip</label>
+                    <label><input type="radio" name="tripTypeSmall" value="oneway" onchange="syncTripType('small')"> One Way</label>
+                    <label><input type="radio" name="tripTypeSmall" value="multicity" onchange="syncTripType('small')"> Multi City</label>
                 </div>                
                 <div class="input-row-small">
-                    <input type="text" class="input-field-small" id="from-small" placeholder="From">
-                    <input type="text" class="input-field-small" id="to-small" placeholder="To">
-                    <input type="date" class="input-field-small" id="depart-small">
-                    <input type="date" class="input-field-small" id="return-small">
+                    <input type="text" class="input-field-small" id="from-small" placeholder="From" oninput="syncInputs('from-small', 'from-big')">
+                    <input type="text" class="input-field-small" id="to-small" placeholder="To" oninput="syncInputs('to-small', 'to-big')">
+                    <input type="date" class="input-field-small" id="depart-small" onchange="syncInputs('depart-small', 'depart-big')">
+                    <input type="date" class="input-field-small" id="return-small" onchange="syncInputs('return-small', 'return-big')">
                 </div>
                 <div class="travelers-container-small">
-                    <button id="travelersButton-small" class="travelers-button-small" onclick="toggleModal()">1 Traveler, Economy</button>
+                    <button id="travelersButton-small" class="travelers-button-small" onclick="toggleModal('small')">1 Traveler, Economy</button>
                     <div class="travelers-modal-small" id="travelersModal-small">
                         <div class="passenger-section-small">
                             <div class="passenger-type-small">
                                 <label>Adults</label>
                                 <div class="counter-small">
-                                    <button onclick="decrement('adults-small')">-</button>
+                                    <button onclick="decrement('adults-small', 'adults-big')">-</button>
                                     <input type="text" id="adults-small" value="1" readonly />
-                                    <button onclick="increment('adults-small')">+</button>
+                                    <button onclick="increment('adults-small', 'adults-big')">+</button>
                                 </div>
                             </div>
                             <div class="passenger-type-small">
                                 <label>Child <small>(2-11 YRS)</small></label>
                                 <div class="counter-small">
-                                    <button onclick="decrement('children-small')">-</button>
+                                    <button onclick="decrement('children-small', 'children-big')">-</button>
                                     <input type="text" id="children-small" value="0" readonly />
-                                    <button onclick="increment('children-small')">+</button>
+                                    <button onclick="increment('children-small', 'children-big')">+</button>
                                 </div>
                             </div>
                             <div class="passenger-type-small">
                                 <label>Infant <small>(Below 2 YRS)</small></label>
                                 <div class="counter-small">
-                                    <button onclick="decrement('infants-small')">-</button>
+                                    <button onclick="decrement('infants-small', 'infants-big')">-</button>
                                     <input type="text" id="infants-small" value="0" readonly />
-                                    <button onclick="increment('infants-small')">+</button>
+                                    <button onclick="increment('infants-small', 'infants-big')">+</button>
                                 </div>
                             </div>
                         </div>
                         <div class="class-selection-small">
-                            <label>
-                                <input type="radio" name="class" value="Economy" checked onchange="updateTravelerInfo()"> Economy
-                            </label>
-                            <label>
-                                <input type="radio" name="class" value="Premium Economy" onchange="updateTravelerInfo()"> Premium Economy
-                            </label>
-                            <label>
-                                <input type="radio" name="class" value="Business" onchange="updateTravelerInfo()"> Business
-                            </label>
+                            <label><input type="radio" name="classSmall" value="Economy" checked onchange="syncClass('small')"> Economy</label>
+                            <label><input type="radio" name="classSmall" value="Premium Economy" onchange="syncClass('small')"> Premium Economy</label>
+                            <label><input type="radio" name="classSmall" value="Business" onchange="syncClass('small')"> Business</label>
                         </div>
                         <button class="done-button-small" onclick="closeModal()">Done</button>
                     </div>      

@@ -35,6 +35,59 @@
       </div>
     </header>
     <br>
+    <div class="search-container-flights">
+        <div class="trip-type-flights">
+            <label><input type="radio" name="tripTypeFlights" value="round" checked onchange="syncTripType('flights')"> Round Trip</label>
+            <label><input type="radio" name="tripTypeFlights" value="oneway" onchange="syncTripType('flights')"> One Way</label>
+            <label><input type="radio" name="tripTypeFlights" value="multicity" onchange="syncTripType('flights')"> Multi City</label>
+        </div>    
+        <div class="input-row-flights">
+            <input type="text" class="input-field-flights" id="from-flights" placeholder="From" oninput="syncInputs('from-flights')">
+            <span class="swap-icon-flights">⇄</span>
+            <input type="text" class="input-field-flights" id="to-flights" placeholder="To" oninput="syncInputs('to-flights')">
+            <input type="date" class="input-field-flights" id="depart-flights" onchange="syncInputs('depart-flights')">
+            <input type="date" class="input-field-flights" id="return-flights" onchange="syncInputs('return-flights')">            
+            <div class="travelers-container-flights">              
+                <button id="travelersButton-flights" class="travelers-button-flights" onclick="toggleModal('flights')">1 Traveler, Economy</button>          
+                <div class="travelers-modal-flights" id="travelersModal-flights">
+                  <div class="passenger-section-flights">
+                    <div class="passenger-type-flights">
+                      <label>Adults</label>
+                      <div class="counter-flights">
+                        <button onclick="decrementflights('adults-flights')">-</button>
+                        <input type="text" id="adults-flights" value="1" readonly />
+                        <button onclick="incrementflights('adults-flights')">+</button>
+                      </div>
+                    </div>
+                    <div class="passenger-type-flights">
+                      <label>Child <small>(2-11 YRS)</small></label>
+                      <div class="counter-flights">
+                        <button onclick="decrementflights('children-flights')">-</button>
+                        <input type="text" id="children-flights" value="0" readonly />
+                        <button onclick="incrementflights('children-flights')">+</button>
+                      </div>
+                    </div>
+                    <div class="passenger-type-flights">
+                      <label>Infant <small>(Below 2 YRS)</small></label>
+                      <div class="counter-flights">
+                        <button onclick="decrementflights('infants-flights')">-</button>
+                        <input type="text" id="infants-flights" value="0" readonly />
+                        <button onclick="incrementflights('infants-flights')">+</button>
+                      </div>
+                    </div>
+                  </div>          
+                  <div class="class-selection-flights">
+                    <label><input type="radio" name="classFlights" value="Economy" checked onchange="updateTravelerInfoFlights()"> Economy</label>
+                    <label><input type="radio" name="classFlights" value="Premium Economy" onchange="updateTravelerInfoFlights()"> Premium Economy</label>
+                    <label><input type="radio" name="classFlights" value="Business" onchange="updateTravelerInfoFlights()"> Business</label>
+                  </div>                  
+                  <button class="done-button-flights" onclick="closeModal()">Done</button>
+                </div>                  
+              </div>                  
+            <button class="search-button-flights" onclick="searchFlights()">Search</button>
+        </div>
+    </div>    
+    <br>
     <script src="script.js"></script>
 </body>
 <footer class="footer">
