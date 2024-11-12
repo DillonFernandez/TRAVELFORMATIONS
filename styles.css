@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  color: #c0c0c0;
 }
 
 /* ----------------------------------------------------------------------------------------------------*/
@@ -233,7 +234,8 @@ header {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
-/* Home Page*/
+/*Home Page*/
+/*Banner Text*/
 .travel-content {
   color: #222222;
   text-align: center;
@@ -249,7 +251,6 @@ header {
   font-size: 1.6rem; 
   margin: 10px 0;
 }
-
 
 @media (max-width: 1050px) {
   .travel-content {
@@ -736,6 +737,149 @@ header {
 @media (min-width: 1050px) {
   .travel-search-engine-small{
     display: none;
+  }
+}
+
+/*Slide Show 1*/
+.holiday-packages hr {
+  border: none;
+  border-top: 2px solid #c0c0c0;
+  width: 15%;
+}
+
+.slideshow-container {
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.slides-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: calc(100% * 8 / 3);
+}
+
+.slide {
+  flex: 1 0 calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.tinted img {
+  filter: brightness(0.5);
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+  z-index: 10;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.thumbnails-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .holiday-packages h1 {
+      font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .holiday-packages h1 {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .holiday-packages h1 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .slide {
+    flex: 1 0 calc(100% / 2);
+  }
+  
+  .tinted img {
+    filter: none;
+  }
+}
+
+@media (max-width: 490px) {
+  .slide {
+    flex: 1 0 100%;
+  }
+  
+  .tinted img {
+    filter: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail {
+    width: 50px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail {
+    width: 40px;
+    height: 30px;
   }
 }
 

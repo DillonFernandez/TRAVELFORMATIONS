@@ -1,4 +1,3 @@
-/*Mobile Navigtion*/
 function openNav() {
   document.getElementById("myNav").style.display = "block";
 }
@@ -7,7 +6,8 @@ function closeNav() {
   document.getElementById("myNav").style.display = "none";
 }
 
-/*Travel Search Engine*/
+/* ----------------------------------------------------------------------------------------------------*/
+
 function increment(id1, id2) {
   let input1 = document.getElementById(id1);
   let input2 = document.getElementById(id2);
@@ -173,4 +173,69 @@ function updateTravelerInfoFlights() {
     document.querySelector('input[name="classFlights"]:checked').value : 'Economy';
 
   document.getElementById("travelersButton-flights").innerText = `${travelerTextFlights}, ${selectedClassFlights}`;
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+function changeSlide(direction) {
+  slideIndex += direction;
+
+  if (slideIndex < 0) {
+      slideIndex = getTotalSlidesForCurrentLayout() - 1;
+  } else if (slideIndex >= getTotalSlidesForCurrentLayout()) {
+      slideIndex = 0;
+  }
+
+  showSlides();
+}
+
+function goToSlide(index) {
+  slideIndex = index;
+  showSlides();
+}
+
+function showSlides() {
+  const slidesContainer = document.querySelector('.slides-container');
+  const slidesPerView = getSlidesPerView();
+  slidesContainer.style.transform = `translateX(${-slideIndex * 100 / slidesPerView}%)`;
+
+  thumbnails.forEach((thumbnail, index) => {
+    if (index === slideIndex) {
+      thumbnail.classList.add('active');
+    } else {
+      thumbnail.classList.remove('active');
+    }
+  });
+
+  slides.forEach(slide => slide.classList.remove('tinted'));
+
+  if (slidesPerView === 3) {
+    if (slideIndex < totalSlides - 1) slides[slideIndex].classList.add('tinted');
+    if (slideIndex + 2 < totalSlides) slides[slideIndex + 2].classList.add('tinted');
+  }
+}
+
+setInterval(() => {
+  changeSlide(1);
+}, 2000);
+
+showSlides();
+
+function getSlidesPerView() {
+  if (window.innerWidth <= 490) {
+    return 1;
+  } else if (window.innerWidth <= 890) {
+    return 2;
+  } else {
+    return 3;
+  }
+}
+
+function getTotalSlidesForCurrentLayout() {
+  return Math.ceil(totalSlides / getSlidesPerView());
 }
