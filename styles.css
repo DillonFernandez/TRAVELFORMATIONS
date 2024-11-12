@@ -38,6 +38,7 @@ header {
 .logo {
   font-size: 24px;
   font-weight: bold;
+  color: #222222;
 }
 
 .nav-links {
@@ -743,8 +744,12 @@ header {
 /*Slide Show 1*/
 .holiday-packages hr {
   border: none;
-  border-top: 2px solid #c0c0c0;
+  border-top: 2px solid #222222;
   width: 15%;
+}
+
+.holiday-packages h1 {
+  color: #222222;
 }
 
 .slideshow-container {
@@ -1260,5 +1265,224 @@ header {
 @media (max-width: 324px) {
   .trip-type-flights label{
     font-size: 11px;
+  }
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+/*Contact Us*/
+.contact-section {
+  text-align: center;
+  max-width: 95%;
+  margin: auto;
+}
+
+.contact-section h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #222222;
+}
+
+.contact-section p {
+  color: #222222;
+  margin-bottom: 30px;
+}
+
+.contact-info-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 2%;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #c0c0c0;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+}
+
+.card img {
+  width: 50px;
+}
+
+.contact-form-map {
+  color: #222222;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+.contact-form, .map {
+  width: 48%;
+  background: #c0c0c0;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.contact-form h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.contact-form p {
+  color: #222222;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 95%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #222222;
+  color: #c0c0c0;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.map iframe {
+  width: 100%;
+  height: 410px;
+  border: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 650px) {
+  .contact-info-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .card {
+      width: 90%;
+  }
+
+  .contact-form-map {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .contact-form, .map {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section h1 {
+      font-size: 1.8em;
+  }
+
+  .contact-form h2 {
+      font-size: 1.3em;
+  }
+
+  .contact-section p,
+  .contact-form p {
+      font-size: 0.9em;
+  }
+
+  .card img {
+      width: 40px;
+  }
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+/*Terms and Conditions*/
+.tandc-container hr {
+  border: none;
+  border-top: 2px solid #222222;
+  width: 15%;
+  margin-bottom: 30px;
+}
+
+.tandc-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.tandc-section {
+  background-color: #c0c0c0;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tandc-section p {
+  font-size: 1.05em;
+  color: #222222;
+}
+
+.tandc-section h2 {
+  font-size: 2em;
+  color: #222222;
+  margin-top: 0px;
+  font-weight: 600;
+}
+
+.tandc-section h3 {
+  font-size: 1.6em;
+  color: #222222;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.tandc-section ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.tandc-section ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  color: #222222;
+}
+
+.tandc-section ul li::before {
+  content: "✔";
+  color: #222222;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .tandc-section h2 {
+      font-size: 1.8em;
+  }
+
+  .tandc-section h3 {
+      font-size: 1.4em;
+  }
+
+  .tandc-section ul li {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .tandc-section h2 {
+      font-size: 1.6em;
+  }
+
+  .tandc-section h3 {
+      font-size: 1.2em;
   }
 }
