@@ -222,7 +222,7 @@ function showSlides() {
 
 setInterval(() => {
   changeSlide(1);
-}, 2000);
+}, 5000);
 
 showSlides();
 
