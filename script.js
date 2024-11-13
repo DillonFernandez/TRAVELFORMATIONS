@@ -177,56 +177,47 @@ function updateTravelerInfoFlights() {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-const thumbnails = document.querySelectorAll('.thumbnail');
+let slideshow1Index = 0;
+const slideshow1Slides = document.querySelectorAll('.slideshow1-slide');
+const slideshow1TotalSlides = slideshow1Slides.length;
 
-function changeSlide(direction) {
-  slideIndex += direction;
+function changeSlide1(direction) {
+  slideshow1Index += direction;
 
-  if (slideIndex < 0) {
-      slideIndex = getTotalSlidesForCurrentLayout() - 1;
-  } else if (slideIndex >= getTotalSlidesForCurrentLayout()) {
-      slideIndex = 0;
+  if (slideshow1Index < 0) {
+    slideshow1Index = getTotalSlidesForCurrentLayout1() - 1;
+  } else if (slideshow1Index >= getTotalSlidesForCurrentLayout1()) {
+    slideshow1Index = 0;
   }
 
-  showSlides();
+  showSlides1();
 }
 
-function goToSlide(index) {
-  slideIndex = index;
-  showSlides();
+function goToSlide1(index) {
+  slideshow1Index = index;
+  showSlides1();
 }
 
-function showSlides() {
-  const slidesContainer = document.querySelector('.slides-container');
-  const slidesPerView = getSlidesPerView();
-  slidesContainer.style.transform = `translateX(${-slideIndex * 100 / slidesPerView}%)`;
+function showSlides1() {
+  const slideshow1SlidesContainer = document.querySelector('.slideshow1-slides');
+  const slideshow1SlidesPerView = getSlidesPerView1();
+  slideshow1SlidesContainer.style.transform = `translateX(${-slideshow1Index * 100 / slideshow1SlidesPerView}%)`;
 
-  thumbnails.forEach((thumbnail, index) => {
-    if (index === slideIndex) {
-      thumbnail.classList.add('active');
-    } else {
-      thumbnail.classList.remove('active');
-    }
-  });
+  slideshow1Slides.forEach(slide => slide.classList.remove('slideshow1-tinted'));
 
-  slides.forEach(slide => slide.classList.remove('tinted'));
-
-  if (slidesPerView === 3) {
-    if (slideIndex < totalSlides - 1) slides[slideIndex].classList.add('tinted');
-    if (slideIndex + 2 < totalSlides) slides[slideIndex + 2].classList.add('tinted');
+  if (slideshow1SlidesPerView === 3) {
+    if (slideshow1Index < slideshow1TotalSlides - 1) slideshow1Slides[slideshow1Index].classList.add('slideshow1-tinted');
+    if (slideshow1Index + 2 < slideshow1TotalSlides) slideshow1Slides[slideshow1Index + 2].classList.add('slideshow1-tinted');
   }
 }
 
 setInterval(() => {
-  changeSlide(1);
+  changeSlide1(1);
 }, 5000);
 
-showSlides();
+showSlides1();
 
-function getSlidesPerView() {
+function getSlidesPerView1() {
   if (window.innerWidth <= 490) {
     return 1;
   } else if (window.innerWidth <= 890) {
@@ -236,6 +227,130 @@ function getSlidesPerView() {
   }
 }
 
-function getTotalSlidesForCurrentLayout() {
-  return Math.ceil(totalSlides / getSlidesPerView());
+function getTotalSlidesForCurrentLayout1() {
+  return Math.ceil(slideshow1TotalSlides / getSlidesPerView1());
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+let slideshow2Index = 0;
+const slideshow2Slides = document.querySelectorAll('.slideshow2-slide');
+const slideshow2TotalSlides = slideshow2Slides.length;
+const slideshow2Thumbnails = document.querySelectorAll('.slideshow2-thumbnail');
+
+function changeSlide2(direction) {
+  slideshow2Index += direction;
+
+  if (slideshow2Index < 0) {
+    slideshow2Index = getTotalSlidesForCurrentLayout2() - 1;
+  } else if (slideshow2Index >= getTotalSlidesForCurrentLayout2()) {
+    slideshow2Index = 0;
+  }
+
+  showSlides2();
+}
+
+function goToSlide2(index) {
+  slideshow2Index = index;
+  showSlides2();
+}
+
+function showSlides2() {
+  const slideshow2SlidesContainer = document.querySelector('.slideshow2-slides');
+  const slideshow2SlidesPerView = getSlidesPerView2();
+  slideshow2SlidesContainer.style.transform = `translateX(${-slideshow2Index * 100 / slideshow2SlidesPerView}%)`;
+
+  slideshow2Thumbnails.forEach((thumbnail, index) => {
+    if (index === slideshow2Index) {
+      thumbnail.classList.add('active');
+    } else {
+      thumbnail.classList.remove('active');
+    }
+  });
+
+  slideshow2Slides.forEach(slide => slide.classList.remove('slideshow2-tinted'));
+
+  if (slideshow2SlidesPerView === 3) {
+    if (slideshow2Index < slideshow2TotalSlides - 1) slideshow2Slides[slideshow2Index].classList.add('slideshow2-tinted');
+    if (slideshow2Index + 2 < slideshow2TotalSlides) slideshow2Slides[slideshow2Index + 2].classList.add('slideshow2-tinted');
+  }
+}
+
+setInterval(() => {
+  changeSlide2(1);
+}, 5000);
+
+showSlides2();
+
+function getSlidesPerView2() {
+  if (window.innerWidth <= 490) {
+    return 1;
+  } else if (window.innerWidth <= 890) {
+    return 2;
+  } else {
+    return 3;
+  }
+}
+
+function getTotalSlidesForCurrentLayout2() {
+  return Math.ceil(slideshow2TotalSlides / getSlidesPerView2());
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+let holidaySlideIndex = 0;
+const holidaySlides = document.querySelectorAll('.holiday-slide');
+const totalHolidaySlides = holidaySlides.length;
+const holidayThumbnails = document.querySelectorAll('.holiday-thumbnail');
+
+function changeHolidaySlide(direction) {
+  holidaySlideIndex += direction;
+  if (holidaySlideIndex < 0) {
+    holidaySlideIndex = getTotalHolidaySlidesForCurrentLayout() - 1;
+  } else if (holidaySlideIndex >= getTotalHolidaySlidesForCurrentLayout()) {
+    holidaySlideIndex = 0;
+  }
+  showHolidaySlides();
+}
+
+function goToHolidaySlide(index) {
+  holidaySlideIndex = index;
+  showHolidaySlides();
+}
+
+function showHolidaySlides() {
+  const holidaySlidesContainer = document.querySelector('.holiday-packages-slides');
+  const holidaySlidesPerView = getHolidaySlidesPerView();
+  holidaySlidesContainer.style.transform = `translateX(${-holidaySlideIndex * 100 / holidaySlidesPerView}%)`;
+
+  holidayThumbnails.forEach((thumbnail, index) => {
+    if (index === holidaySlideIndex) {
+      thumbnail.classList.add('active');
+    } else {
+      thumbnail.classList.remove('active');
+    }
+  });
+
+  holidaySlides.forEach(slide => slide.classList.remove('holiday-fade-effect'));
+
+  if (holidaySlidesPerView === 3) {
+    if (holidaySlideIndex < totalHolidaySlides - 1) holidaySlides[holidaySlideIndex].classList.add('holiday-fade-effect');
+    if (holidaySlideIndex + 2 < totalHolidaySlides) holidaySlides[holidaySlideIndex + 2].classList.add('holiday-fade-effect');
+  }
+}
+
+setInterval(() => {
+  changeHolidaySlide(1);
+}, 5000);
+
+showHolidaySlides();
+
+function getHolidaySlidesPerView() {
+  if (window.innerWidth <= 490) return 1;
+  else if (window.innerWidth <= 890) return 2;
+  else return 3;
+}
+
+function getTotalHolidaySlidesForCurrentLayout() {
+  return Math.ceil(totalHolidaySlides / getHolidaySlidesPerView());
 }
