@@ -11,7 +11,7 @@ body {
   bottom: 20px;
   right: 20px;
   padding-bottom: 5px;
-  background-color: #000000;
+  background-color: #30587f;
   color: white;
   border: none;
   border-radius: 50%;
@@ -60,6 +60,10 @@ header {
   font-size: 24px;
   font-weight: bold;
   color: #222222;
+}
+
+.logo img{
+  width: 60%;
 }
 
 .nav-links {
