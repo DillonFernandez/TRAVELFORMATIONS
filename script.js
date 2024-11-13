@@ -8,6 +8,27 @@ function closeNav() {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+scrollToTopBtn.style.display = "none";
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+};
+
+scrollToTopBtn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+
+/* ----------------------------------------------------------------------------------------------------*/
+
 function increment(id1, id2) {
   let input1 = document.getElementById(id1);
   let input2 = document.getElementById(id2);
@@ -298,59 +319,3 @@ function getTotalSlidesForCurrentLayout2() {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
-let holidaySlideIndex = 0;
-const holidaySlides = document.querySelectorAll('.holiday-slide');
-const totalHolidaySlides = holidaySlides.length;
-const holidayThumbnails = document.querySelectorAll('.holiday-thumbnail');
-
-function changeHolidaySlide(direction) {
-  holidaySlideIndex += direction;
-  if (holidaySlideIndex < 0) {
-    holidaySlideIndex = getTotalHolidaySlidesForCurrentLayout() - 1;
-  } else if (holidaySlideIndex >= getTotalHolidaySlidesForCurrentLayout()) {
-    holidaySlideIndex = 0;
-  }
-  showHolidaySlides();
-}
-
-function goToHolidaySlide(index) {
-  holidaySlideIndex = index;
-  showHolidaySlides();
-}
-
-function showHolidaySlides() {
-  const holidaySlidesContainer = document.querySelector('.holiday-packages-slides');
-  const holidaySlidesPerView = getHolidaySlidesPerView();
-  holidaySlidesContainer.style.transform = `translateX(${-holidaySlideIndex * 100 / holidaySlidesPerView}%)`;
-
-  holidayThumbnails.forEach((thumbnail, index) => {
-    if (index === holidaySlideIndex) {
-      thumbnail.classList.add('active');
-    } else {
-      thumbnail.classList.remove('active');
-    }
-  });
-
-  holidaySlides.forEach(slide => slide.classList.remove('holiday-fade-effect'));
-
-  if (holidaySlidesPerView === 3) {
-    if (holidaySlideIndex < totalHolidaySlides - 1) holidaySlides[holidaySlideIndex].classList.add('holiday-fade-effect');
-    if (holidaySlideIndex + 2 < totalHolidaySlides) holidaySlides[holidaySlideIndex + 2].classList.add('holiday-fade-effect');
-  }
-}
-
-setInterval(() => {
-  changeHolidaySlide(1);
-}, 5000);
-
-showHolidaySlides();
-
-function getHolidaySlidesPerView() {
-  if (window.innerWidth <= 490) return 1;
-  else if (window.innerWidth <= 890) return 2;
-  else return 3;
-}
-
-function getTotalHolidaySlidesForCurrentLayout() {
-  return Math.ceil(totalHolidaySlides / getHolidaySlidesPerView());
-}

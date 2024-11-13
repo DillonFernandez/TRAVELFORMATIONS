@@ -5,6 +5,27 @@ body {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
+/*Go To The Top*/
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: none; 
+}
+
+/* ----------------------------------------------------------------------------------------------------*/
+
 /* Navigation */
 header {
   margin-top: -8px;
@@ -30,7 +51,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -1245,6 +1265,116 @@ header {
   }
 }
 
+/*Home About*/
+.homeabout {
+  margin: 50px -8px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #c0c0c0;
+  text-align: center;
+}
+
+.homeabout hr {
+  border: none;
+  border-top: 2px solid #222222;
+  width: 15%;
+}
+
+.homeabout h1 {
+  color: #222222;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.homeabout .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 80%;
+  margin: 0 auto;
+  flex-direction: row;
+}
+
+.homeabout img {
+  height: 400px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.homeabout .text {
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.homeabout .text h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.homeabout .text p {
+  font-size: 1rem;
+}
+
+
+@media (max-width: 1100px) {
+  .homeabout img {
+    height: 350px;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  .homeabout .content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeabout h1 {
+    font-size: 1.8rem;
+  }
+
+  .homeabout .content {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90%;
+  }
+
+  .homeabout img {
+    height: auto;
+    width: auto;
+  }
+
+  .homeabout .text h2 {
+    font-size: 1.3rem;
+  }
+
+  .homeabout .text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeabout h1 {
+    font-size: 1.5rem;
+  }
+
+  .homeabout hr {
+    width: 30%;
+  }
+
+  .homeabout .text h2 {
+    font-size: 1.2rem;
+  }
+
+  .homeabout .text p {
+    font-size: 0.8rem;
+  }
+}
+
 /*Slide Show 2*/
 .slideshow2 hr {
   border: none;
@@ -1388,6 +1518,134 @@ header {
   .slideshow2-thumbnail {
     width: 40px;
     height: 30px;
+  }
+}
+
+/*Fly Now Pay Later*/
+.fly-now-pay-later {
+  margin: 50px -8px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #c0c0c0;
+  text-align: center;
+}
+
+.fly-now-pay-later hr {
+  border: none;
+  border-top: 2px solid #222222;
+  width: 15%;
+  margin: 0 auto;
+}
+
+.fly-now-pay-later h1 {
+  color: #222222;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.fly-now-pay-later .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 80%;
+  margin: 0 auto;
+  flex-direction: column-reverse;
+  padding: 0 5%;
+}
+
+.fly-now-pay-later iframe {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+.fly-now-pay-later .text {
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.fly-now-pay-later .text h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.fly-now-pay-later .text p {
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .fly-now-pay-later h1 {
+    font-size: 1.5rem;
+  }
+
+  .fly-now-pay-later .content {
+    gap: 20px;
+  }
+
+  .fly-now-pay-later iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .fly-now-pay-later .text h2 {
+    font-size: 1.25rem;
+  }
+
+  .fly-now-pay-later .text p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .fly-now-pay-later h1 {
+    font-size: 1.75rem;
+  }
+
+  .fly-now-pay-later .content {
+    gap: 30px;
+  }
+
+  .fly-now-pay-later iframe {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+  }
+
+  .fly-now-pay-later .text h2 {
+    font-size: 1.375rem;
+  }
+
+  .fly-now-pay-later .text p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .fly-now-pay-later h1 {
+    font-size: 2rem;
+  }
+
+  .fly-now-pay-later .content {
+    gap: 40px;
+  }
+
+  .fly-now-pay-later iframe {
+    width: 980px;
+    height: 552px;
+  }
+
+  .fly-now-pay-later .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .fly-now-pay-later .text p {
+    font-size: 1rem;
   }
 }
 
@@ -1623,89 +1881,6 @@ header {
   color: #222222;
 }
 
-.holiday-packages-slideshow {
-  position: relative;
-  width: 90%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.holiday-packages-slides {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: calc(100% * 8 / 3);
-}
-
-.holiday-slide {
-  flex: 1 0 calc(100% / 3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.holiday-slide img {
-  width: 100%;
-  height: auto;
-}
-
-.holiday-fade-effect img {
-  filter: brightness(0.5);
-}
-
-.holiday-packages-prev, .holiday-packages-next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s;
-  user-select: none;
-  z-index: 10;
-}
-
-.holiday-packages-next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.holiday-packages-prev {
-  left: 0;
-  border-radius: 0 3px 3px 0;
-}
-
-.holiday-thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.holiday-thumbnail {
-  cursor: pointer;
-  width: 60px;
-  height: 40px;
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.holiday-thumbnail img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
 @media (max-width: 992px) {
   .holiday-packages h1 {
     font-size: 2.5rem;
@@ -1721,39 +1896,5 @@ header {
 @media (max-width: 576px) {
   .holiday-packages h1 {
     font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 890px) {
-  .holiday-slide {
-    flex: 1 0 calc(100% / 2);
-  }
-  
-  .holiday-fade-effect img {
-    filter: none;
-  }
-}
-
-@media (max-width: 490px) {
-  .holiday-slide {
-    flex: 1 0 100%;
-  }
-  
-  .holiday-fade-effect img {
-    filter: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .holiday-thumbnail {
-    width: 50px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .holiday-thumbnail {
-    width: 40px;
-    height: 30px;
   }
 }
