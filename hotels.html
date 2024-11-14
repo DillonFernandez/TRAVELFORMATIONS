@@ -35,17 +35,37 @@
         </div>
       </div>
     </header>
+    <div class="searchhead">
+      <div class="hotel-search-bar">
+        <form action="#" method="GET" class="hotel-search-bar-form">
+          <input type="text" id="hotel" name="hotel" placeholder="Hotel" class="hotel-search-bar-input" required>
+          <input type="date" id="checkin" name="checkin" class="hotel-search-bar-input" required>
+          <input type="date" id="checkout" name="checkout" class="hotel-search-bar-input" required>
+          <input type="number" id="guests" name="guests" min="1" max="10" class="hotel-search-bar-input" required placeholder="Guests">
+          <input type="number" id="rooms" name="rooms" min="1" max="5" class="hotel-search-bar-input" required placeholder="Rooms">
+          <select id="roomtype" name="roomtype" class="hotel-search-bar-select" required>
+            <option selected disabled>Select Room</option>
+            <option value="single">Single Room</option>
+            <option value="double">Double Room</option>
+            <option value="suite">Suite</option>
+            <option value="family">Family Room</option>
+          </select>
+          <button type="submit" class="hotel-search-bar-btn">Search</button>
+        </form>
+      </div>
+    </div>
     <br>
     <button id="scrollToTopBtn" class="scroll-to-top-btn">&#10094;</button>
     <script src="script.js"></script>
 </body>
-<footer class="footer">
+<footer>
+  <div class="footer">
     <div class="footer-section">
         <h3>Need Our Assistance?</h3>
         <p>
             <i class="fa fa-phone"></i> 
             Email: sales@travelformations.uk<br>
-            Phone: +44 208 138 2036<br>
+            Phone: 0208 138 2036<br>
             WhatsApp: +44 741 861 0604
         </p>
         <p>
@@ -78,5 +98,7 @@
             <button type="submit">Subscribe</button>
         </form>
     </div>
+  </div>
+  <div class="rights"><p>Copyright © 2024 TRAVELFORMATIONS - All Rights Reserved.</p></div>
 </footer>
 </html>

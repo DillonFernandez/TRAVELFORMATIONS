@@ -121,6 +121,14 @@ header {
   font-size: 60px;
 }
 
+.searchhead{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: -8px;
+  margin-right: -8px;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+
 @media screen and (min-width: 901px) {
   .navbar-small{
     display: none;
@@ -229,6 +237,16 @@ header {
   color: #222222;
   font-weight: bold;
   cursor: pointer;
+}
+
+.rights{
+  margin-bottom: -34px;
+  margin-top: -34px;
+  margin-left: -8px;
+  margin-right: -8px;
+  background-color: #c0c0c0;
+  color: #222222;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -772,7 +790,7 @@ header {
   max-width: 1000px;
   margin: auto;
   padding: 15px;
-  background: #ffffff;
+  background: #c0c0c0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -1153,6 +1171,7 @@ header {
 }
 
 .slideshow1 h1 {
+  margin-bottom: 15px;
   color: #222222;
 }
 
@@ -2386,3 +2405,76 @@ header {
 /* ----------------------------------------------------------------------------------------------------*/
 
 /*Hotels*/
+.hotel-search-bar {
+  width: 73%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #c0c0c0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotel-search-bar-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hotel-search-bar-input,
+.hotel-search-bar-select,
+.hotel-search-bar-btn {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.hotel-search-bar-input:focus,
+.hotel-search-bar-select:focus {
+  border-color: #222222;
+  outline: none;
+}
+
+.hotel-search-bar-select {
+  background-color: #ffffff;
+  width: 150px;
+}
+
+.hotel-search-bar-btn {
+  background-color: #222222;
+  color: #c0c0c0;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+}
+
+.hotel-search-bar-btn:hover {
+  background-color: #222222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hotel-search-bar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hotel-search-bar-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hotel-search-bar-input,
+  .hotel-search-bar-select,
+  .hotel-search-bar-btn {
+    width: 100%;
+    border-radius: 5px;
+  }
+}

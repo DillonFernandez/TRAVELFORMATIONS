@@ -196,6 +196,14 @@ function updateTravelerInfoFlights() {
   document.getElementById("travelersButton-flights").innerText = `${travelerTextFlights}, ${selectedClassFlights}`;
 }
 
+const todaybig = new Date().toISOString().split('T')[0];
+document.getElementById('depart-big').setAttribute('min', todaybig);
+document.getElementById('return-big').setAttribute('min', todaybig);
+
+const todaysmall = new Date().toISOString().split('T')[0];
+document.getElementById('depart-small').setAttribute('min', todaysmall);
+document.getElementById('return-small').setAttribute('min', todaysmall);
+
 /* ----------------------------------------------------------------------------------------------------*/
 
 let slideshow1Index = 0;
@@ -391,3 +399,9 @@ function getSlidesPerView4() {
 function getTotalSlidesForCurrentLayout4() {
   return Math.ceil(slideshow4TotalSlides / getSlidesPerView4());
 }
+
+/* ----------------------------------------------------------------------------------------------------*/
+
+const today = new Date().toISOString().split('T')[0];    
+document.getElementById('checkin').setAttribute('min', today);
+document.getElementById('checkout').setAttribute('min', today);
