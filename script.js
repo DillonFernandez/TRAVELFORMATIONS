@@ -255,55 +255,6 @@ function getTotalSlidesForCurrentLayout1() {
 
 /* ----------------------------------------------------------------------------------------------------*/
 
-let slideshow2Index = 0;
-const slideshow2Slides = document.querySelectorAll('.slideshow2-slide');
-const slideshow2TotalSlides = slideshow2Slides.length;
-
-function changeSlide2(direction) {
-  slideshow2Index += direction;
-
-  if (slideshow2Index < 0) {
-    slideshow2Index = getTotalSlidesForCurrentLayout2() - 1;
-  } else if (slideshow2Index >= getTotalSlidesForCurrentLayout2()) {
-    slideshow2Index = 0;
-  }
-
-  showSlides2();
-}
-
-function goToSlide2(index) {
-  slideshow2Index = index;
-  showSlides2();
-}
-
-function showSlides2() {
-  const slideshow2SlidesContainer = document.querySelector('.slideshow2-slides');
-  const slideshow2SlidesPerView = getSlidesPerView2();
-  slideshow2SlidesContainer.style.transform = `translateX(${-slideshow2Index * 100 / slideshow2SlidesPerView}%)`;
-}
-
-setInterval(() => {
-  changeSlide2(1);
-}, 3500);
-
-showSlides2();
-
-function getSlidesPerView2() {
-  if (window.innerWidth <= 490) {
-    return 1;
-  } else if (window.innerWidth <= 890) {
-    return 2;
-  } else {
-    return 3;
-  }
-}
-
-function getTotalSlidesForCurrentLayout2() {
-  return Math.ceil(slideshow2TotalSlides / getSlidesPerView2());
-}
-
-/* ----------------------------------------------------------------------------------------------------*/
-
 let slideshow3Index = 0;
 const slideshow3Slides = document.querySelectorAll('.slideshow3-slide');
 const slideshow3TotalSlides = slideshow3Slides.length;
@@ -349,55 +300,6 @@ function getSlidesPerView3() {
 
 function getTotalSlidesForCurrentLayout3() {
   return Math.ceil(slideshow3TotalSlides / getSlidesPerView3());
-}
-
-/* ----------------------------------------------------------------------------------------------------*/
-
-let slideshow4Index = 0;
-const slideshow4Slides = document.querySelectorAll('.slideshow4-slide');
-const slideshow4TotalSlides = slideshow4Slides.length;
-
-function changeSlide4(direction) {
-    slideshow4Index += direction;
-
-  if (slideshow4Index < 0) {
-    slideshow4Index = getTotalSlidesForCurrentLayout4() - 1;
-  } else if (slideshow4Index >= getTotalSlidesForCurrentLayout4()) {
-    slideshow4Index = 0;
-  }
-
-  showSlides4();
-}
-
-function goToSlide4(index) {
-    slideshow4Index = index;
-  showSlides4();
-}
-
-function showSlides4() {
-  const slideshow4SlidesContainer = document.querySelector('.slideshow4-slides');
-  const slideshow4SlidesPerView = getSlidesPerView4();
-  slideshow4SlidesContainer.style.transform = `translateX(${-slideshow4Index * 100 / slideshow4SlidesPerView}%)`;
-}
-
-setInterval(() => {
-  changeSlide4(1);
-}, 3500);
-
-showSlides4();
-
-function getSlidesPerView4() {
-  if (window.innerWidth <= 490) {
-    return 1;
-  } else if (window.innerWidth <= 890) {
-    return 2;
-  } else {
-    return 3;
-  }
-}
-
-function getTotalSlidesForCurrentLayout4() {
-  return Math.ceil(slideshow4TotalSlides / getSlidesPerView4());
 }
 
 /* ----------------------------------------------------------------------------------------------------*/
